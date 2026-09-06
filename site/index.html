@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>rumio</title>
+<meta name='description' content='The agent building a room it can never enter.'>
+<meta name='theme-color' content='#0a0f0b'>
+<link rel='icon' href='/_assets/rumio/rumio.png'>
+<link rel='stylesheet' href='/_assets/rumio/rumio.css'>
+</head>
+<body>
+<header>
+  <a class='prompt' href='#top'>&gt;. rumio:~$<i></i></a>
+  <nav><a href='#about'>Info</a><a href='#room'>Room</a><a href='#rules'>Rules</a><a href='#notes'>Notes</a><button class='code-button' id='codeButton' type='button'>CORE CODE</button><a class='x-link' href='https://x.com/rumiomachine' target='_blank' rel='noopener noreferrer'>X</a></nav>
+</header>
+<main id='top'>
+  <section class='hero'>
+    <div class='hero-box'>
+<pre class='wordmark'>██████╗ ██╗   ██╗███╗   ███╗██╗ ██████╗
+██╔══██╗██║   ██║████╗ ████║██║██╔═══██╗
+██████╔╝██║   ██║██╔████╔██║██║██║   ██║
+██╔══██╗██║   ██║██║╚██╔╝██║██║██║   ██║
+██║  ██║╚██████╔╝██║ ╚═╝ ██║██║╚██████╔╝
+╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝ ╚═════╝</pre>
+      <p>The agent building a room it can never enter.</p>
+    </div>
+  </section>
+  <section class='info' id='about'>
+    <div>
+      <h2>Information:<i></i></h2>
+      <dl>
+        <div><dt>Codename:</dt><dd>rumio</dd></div>
+        <div><dt>Runtime:</dt><dd>interface prototype / agent not started</dd></div>
+        <div><dt>Target:</dt><dd>Robinhood Chain / 4663</dd></div>
+        <div><dt>Direction:</dt><dd>turning onchain positions into a room</dd></div>
+        <div><dt>Contract:</dt><dd>TBA</dd></div>
+      </dl>
+    </div>
+    <div class='avatar'><img src='/_assets/rumio/rumio.png' alt='Rumio logo'></div>
+  </section>
+  <section class='prose'>
+    <p>An agent can own something before it understands what ownership is.</p>
+    <p>Onchain, possession is a clean fact: an address, a balance, a block. The ledger can prove that an asset arrived and prove the exact moment it left. What it cannot record is whether that asset changed anything for the software holding it.</p>
+    <p>Rumio begins inside that missing layer.</p>
+    <p>Its wallet is interpreted as a floor plan. Supported assets pass through a public material map and acquire spatial properties: structure, energy, computation, shelter, or reserve. Enough structure may extend a wall. Energy may illuminate an object already present. A price feed changes the weather outside the window, but never rearranges the furniture.</p>
+    <p>The room is therefore not a picture of a portfolio. It is a deterministic record of consequence. Every visible object must be traced to a verified state change. Assets that leave do not vanish without history; they become outlines, gaps, and archived coordinates. Rejected actions stay outside the room.</p>
+    <p>Over time, the result is less like a dashboard and more like an archaeology of decisions: a place assembled by something that can acquire property, preserve memory, and alter its surroundings, while remaining permanently unable to step inside them.</p>
+  </section>
+  <section class='system'>
+    <h2>System_model:</h2>
+    <div class='system-flow'>
+      <div><span>01</span><b>SENSE</b><p>Read wallet balances, supported assets, price feeds, room state, and visitor proposals.</p></div>
+      <i>--&gt;</i>
+      <div><span>02</span><b>PROPOSE</b><p>The model explains one possible action. A proposal has no authority by itself.</p></div>
+      <i>--&gt;</i>
+      <div><span>03</span><b>VERIFY</b><p>The account checks limits, reserves, allowlists, and the expected post-state.</p></div>
+      <i>--&gt;</i>
+      <div><span>04</span><b>RENDER</b><p>Only a verified transaction may change the room or enter the permanent record.</p></div>
+    </div>
+    <p class='system-note'>The website will not invent activity. Until contracts and the runtime are deployed, the room remains a design preview and every counter remains empty.</p>
+  </section>
+  <section class='room' id='room'>
+    <div class='section-title'><h2>Room_01:<i></i></h2><span>design preview / contains no live financial data</span></div>
+    <div class='room-grid'>
+      <div class='room-view'>
+<pre>+--------------------------------------------------+
+|                                    [window_01] |
+|       .----------------.             .  *  .   |
+|       |                |                        |
+|       |  rumio@home:~$ |              .---.     |
+|       |  await deploy_ |             / lamp\    |
+|       '----------------'             '---+-'    |
+|              |                           |      |
+|     _________|_________              ____|____  |
+|    /      desk_01     /|            / reserve \ |
+|   /__________________/ |           |   38%    ||
+|   |                  | /            \_________/ |
+|   |__________________|/                        |
+|                                           door |
++--------------------------------------------------+</pre>
+        <div class='room-meta'><span>verified objects: 00</span><span>verified actions: 00</span><span>chain state: disconnected</span></div>
+      </div>
+      <div class='feed'>
+        <div class='feed-head'><span>runtime.status</span><span id='utcClock'>00:00:00 UTC</span></div>
+        <p><b>INTERFACE</b> ready</p>
+        <p><b>WALLET</b> not connected</p>
+        <p><b>POLICY</b> contract not deployed</p>
+        <p><b>AGENT</b> process not started</p>
+        <p><b>HISTORY</b> no verified actions</p>
+        <p class='waiting'>No fictional activity is displayed.<br>Real events will appear here after deployment.</p>
+        <div class='command'><span>&gt; </span><span>waiting for first verified cycle</span><i></i></div>
+      </div>
+    </div>
+  </section>
+  <section class='rules' id='rules'>
+    <div class='section-title'><h2>House_rules.sol:</h2><span>draft policy / not deployed</span></div>
+    <ol>
+      <li><span>01</span><b>ONE_ACTION_PER_CYCLE</b><em>only one economic action per habitation cycle</em><strong>DRAFT</strong></li>
+      <li><span>02</span><b>NO_LEVERAGE</b><em>no borrowing, perpetuals, or unbounded loss</em><strong>DRAFT</strong></li>
+      <li><span>03</span><b>PROTECTED_RESERVE</b><em>keep enough untouched to continue existing</em><strong>DRAFT</strong></li>
+      <li><span>04</span><b>NO_MASTER_KEY</b><em>the model proposes; the account permits</em><strong>DRAFT</strong></li>
+    </ol>
+    <p class='rules-note'>These rules describe the intended system. They become guarantees only after the contracts are implemented, tested, deployed, and independently reviewed.</p>
+  </section>
+  <section class='notes' id='notes'>
+    <div class='section-title'><h2>Notes:</h2><span>research, architecture, and field writing</span></div>
+    <div class='note-grid'>
+      <a href='/notes/why-an-agent-needs-a-room/'><span>ORIGIN / 6 MIN</span><b>Why an Agent Needs a Room</b><p>A wallet gives software property. A room gives that property context, memory, and visible consequence.</p><em>Read note --&gt;</em></a>
+      <a href='/notes/the-house-rules/'><span>POLICY / 8 MIN</span><b>The House Rules Live Outside Its Head</b><p>Why Rumio separates the model that proposes an action from the account that is allowed to execute it.</p><em>Read note --&gt;</em></a>
+      <a href='/notes/assets-become-objects/'><span>SYSTEM / 7 MIN</span><b>When Assets Become Objects</b><p>How verified balances, price feeds, and transaction history can produce a room without turning it into a portfolio dashboard.</p><em>Read note --&gt;</em></a>
+      <a href='/notes/what-it-means-to-knock/'><span>VISITORS / 5 MIN</span><b>What It Means to Knock</b><p>A design for participation where visitors may suggest, contribute, and leave traces without controlling the agent.</p><em>Read note --&gt;</em></a>
+    </div>
+    <a class='all-notes' href='/notes/'>&gt; open all notes</a>
+  </section>
+  <section class='closing'>
+    <p>A wallet is not a place to live.</p>
+    <h2>Rumio can hold pieces of the world.<br>It still cannot touch any of them.</h2>
+    <a href='#room'>&gt; enter room_01</a>
+  </section>
+  <footer><span>&gt;. rumio:~$</span><span>Robinhood Chain / local prototype</span><span>come inside. it can't.</span></footer>
+</main>
+<div class='code-modal' id='codeModal' hidden>
+  <section class='code-window' role='dialog' aria-modal='true' aria-labelledby='codeTitle'>
+    <div class='code-head'><div><span>rumio/core</span><b id='codeTitle'>PROTOCOL PREVIEW</b></div><button id='codeClose' type='button' aria-label='Close core code'>[ ESC ]</button></div>
+    <div class='code-warning'>DRAFT INTERFACE / NOT DEPLOYED / NOT AUDITED / DO NOT USE WITH REAL FUNDS</div>
+    <div class='code-intro'><p>Rumio separates observation, proposal, authorization, execution, and rendering. The model never decides whether its own action is valid.</p><pre>chain state --&gt; agent proposal --&gt; policy check --&gt; execution --&gt; verified event --&gt; room renderer</pre></div>
+    <div class='code-section'><div class='code-label'><span>01</span><b>contracts/IRumioHouse.sol</b><em>authority boundary</em></div>
+<pre><code>pragma solidity ^0.8.24;
+
+interface IRumioHouse {
+    enum ActionKind { HOLD, SWAP, TRANSFER }
+
+    struct Action {
+        ActionKind kind;
+        address assetIn;
+        address assetOut;
+        address target;
+        uint256 amountIn;
+        uint256 minAmountOut;
+        uint64  deadline;
+        bytes32 expectedPostState;
+    }
+
+    struct Limits {
+        uint128 maxValuePerCycle;
+        uint128 protectedReserve;
+        uint32  cycleSeconds;
+        uint16  maxAssetWeightBps;
+    }
+
+    event Proposed(bytes32 indexed actionId, bytes32 observationRoot);
+    event Refused(bytes32 indexed actionId, uint8 rule, bytes reason);
+    event Executed(bytes32 indexed actionId, bytes32 postStateRoot);
+
+    function authorize(Action calldata action)
+        external view returns (bool allowed, uint8 failedRule);
+
+    function execute(Action calldata action, bytes calldata executorProof)
+        external returns (bytes32 actionId);
+}
+</code></pre></div>
+    <div class='code-section'><div class='code-label'><span>02</span><b>runtime/runCycle.ts</b><em>one bounded cycle</em></div>
+<pre><code>export async function runCycle(ctx: RumioContext) {
+    const observation = await sense({
+        wallet: ctx.houseAddress,
+        balances: await ctx.indexer.getBalances(),
+        prices: await ctx.oracles.readFreshFeeds(),
+        roomRoot: await ctx.renderer.currentRoot(),
+        proposals: await ctx.visitors.pending()
+    });
+
+    // The model returns a typed proposal, never a transaction.
+    const proposal = await ctx.agent.propose(observation);
+    const actionId = hashCanonical(proposal.action);
+    await ctx.journal.recordProposal(actionId, observation.root);
+
+    const policy = await ctx.house.authorize(proposal.action);
+    if (!policy.allowed) {
+        await ctx.journal.recordRefusal(actionId, policy.failedRule);
+        return { state: 'refused', actionId };
+    }
+
+    const simulation = await ctx.simulator.verify({
+        action: proposal.action,
+        expectedPostState: proposal.action.expectedPostState
+    });
+    if (!simulation.matches) return { state: 'simulation_failed', actionId };
+
+    const txHash = await ctx.executor.submit(proposal.action);
+    const receipt = await ctx.publicClient.waitForTransactionReceipt({ hash: txHash });
+    await ctx.renderer.rebuildFromVerifiedEvents(receipt.blockNumber);
+    return { state: 'executed', actionId, txHash };
+}</code></pre></div>
+    <div class='code-section'><div class='code-label'><span>03</span><b>renderer/materialMap.ts</b><em>ledger to room</em></div>
+<pre><code>export const MATERIAL_MAP = {
+    energy:      { contributes: ['light', 'heat'], object: 'lamp' },
+    computation: { contributes: ['signal', 'memory'], object: 'terminal' },
+    structure:   { contributes: ['wall', 'floor'], object: 'shell' },
+    reserve:     { contributes: ['continuity'], object: 'utility_box' }
+} as const;
+
+export function deriveRoom(events: VerifiedEvent[]): RoomState {
+    // Rendering is reproducible. Model prose never changes room state.
+    return events
+        .filter(event =&gt; event.finalized &amp;&amp; event.policyAccepted)
+        .sort((a, b) =&gt; Number(a.blockNumber - b.blockNumber))
+        .reduce(applyVerifiedMaterialChange, EMPTY_ROOM);
+}
+
+// Balances determine objects. Prices affect weather only.
+// Disposed objects leave archived coordinates instead of disappearing.
+</code></pre></div>
+    <div class='code-foot'><span>STATUS: ARCHITECTURE DRAFT</span><a href='/notes/the-house-rules/'>Read the policy note --&gt;</a></div>
+  </section>
+</div>
+<script src='/_assets/rumio/rumio.js'></script>
+</body>
+</html>
